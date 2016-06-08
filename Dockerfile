@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:latest
 MAINTAINER Luc Boissaye <luc@boissaye.fr>
 
 RUN apt-get update -qq
