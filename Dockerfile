@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.4.1
 MAINTAINER Luc Boissaye <luc@boissaye.fr>
 
 RUN apt-get update -qq
