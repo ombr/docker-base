@@ -7,10 +7,10 @@ RUN apt-get update -qq
 RUN apt-get install -y build-essential qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic libxml2-dev libxslt1-dev && apt-get -y autoclean
 
 ### for postgres
+ENV PG_MAJOR 9.6
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' $PG_MAJOR > /etc/apt/sources.list.d/pgdg.list
-RUN apt-get update
-RUN apt-get install -y postgresql-client-9.5
+RUN apt-get update && apt-get install -y postgresql-client-$PG_MAJOR && rm -rf /var/lib/apt/lists/*
 
 ### Node
 RUN groupadd --gid 1000 node \
