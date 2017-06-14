@@ -14,6 +14,7 @@ RUN apt-get update -qq && \
     libxml2-dev\
     libxslt1-dev\
     nodejs\
+    npm \
     qt5-default\
     libqt5webkit5-dev\
     gstreamer1.0-plugins-base\
