@@ -1,9 +1,6 @@
 FROM heroku/heroku:16
 MAINTAINER Luc Boissaye <luc@boissaye.fr>
 
-WORKDIR /var/app
-
-# RUN apt-get update -qq
 # RUN apt-get install -y build-essential qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic libxml2-dev libxslt1-dev && apt-get -y autoclean
 
 
@@ -34,3 +31,4 @@ RUN export NODE_VERSION=6.11.0 && \
   rsync -a /tmp/node-v$NODE_VERSION-linux-x64/ / && \
   rm -rf /tmp/node-v$NODE_VERSION-linux-x64*
 
+WORKDIR /var/app
